@@ -230,9 +230,9 @@ function handleSwipe() {
             move('up')
         }
     }
+    event.preventDefault()
+    handleKeyDown(event)
 }
-event.preventDefault()
-handleKeyDown(event)
 }
 
 function restartGame() {
@@ -243,7 +243,7 @@ function restartGame() {
     updateBoard()
 }
 
-document.addEventListener('keydown', handleKeyDown)
+document.addEventListener('keydown', handleKeyDown, handleSwipe)
 
 createBoard()
 restartGame()
