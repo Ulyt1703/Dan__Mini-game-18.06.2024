@@ -3,6 +3,7 @@ let textHeaderMobile = document.querySelector(".text__header-mobile")
 let headerLabel = document.querySelector(".header__label")
 let mainHome = document.querySelector(".main")
 let containerSecondGame = document.querySelector(".Container__second-game")
+let restartButton = document.querySelector(".restart-button")
 let footerHome = document.querySelector(".footer")
 let loading = document.querySelector(".loading")
 window.addEventListener("load", function() {
@@ -194,45 +195,52 @@ function handleKeyDown(event) {
             break 
     }
 
-let touchStartX = 0
-let touchStartY = 0
-let touchEndX = 0
-let touchEndY = 0
-
-document.addEventListener('touchstart', function(event) {
-    touchStartX = event.changedTouches[0].screenX
-    touchStartY = event.changedTouches[0].screenY
-}, false)
-
-document.addEventListener('touchend', function(event) {
-    touchEndX = event.changedTouches[0].screenX
-    touchEndY = event.changedTouches[0].screenY
-    handleSwipe()
-}, false)
-
-function handleSwipe() {
-    let deltaX = touchEndX - touchStartX
-    let deltaY = touchEndY - touchStartY
-
-    if (Math.abs(deltaX) > Math.abs(deltaY)) {
-        if (deltaX > 0) {
-            move('right')
-            
-        } 
-        else {
-            move('left')
-            
-        }
-    } 
-    else if (deltaY > 0) {
-        move('down')
-    } 
-    else {
-        move('up')
+    document.addEventListener('touchstart', handleTouchStart, false)
+    document.addEventListener('touchmove', handleTouchMove, false)
+    document.addEventListener('touchend', handleTouchEnd, false)
+    document.addEventListener('touchcancel', handleTouchCancel, false)
+    
+    let touchStartX = 0
+    let touchStartY = 0
+    let touchEndX = 0
+    let touchEndY = 0
+    
+    function handleTouchStart(event) {
+        touchStartX = event.changedTouches[0].screenX
+        touchStartY = event.changedTouches[0].screenY
     }
-    event.preventDefault()
-    handleKeyDown(event)
-}
+    
+    function handleTouchMove(event) {
+        touchEndX = event.changedTouches[0].screenX
+        touchEndY = event.changedTouches[0].screenY
+    }
+    
+    function handleTouchEnd(event) {
+        handleSwipe()
+    }
+    
+    function handleTouchCancel(event) {
+    }
+    
+    function handleSwipe() {
+        const deltaX = touchEndX - touchStartX
+        const deltaY = touchEndY - touchStartY
+    
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            if (deltaX > 0) {
+                move('right')
+            } else {
+                move('left')
+                restartButton.style.backgroundColor = 'blue'
+            }
+        } else {
+            if (deltaY > 0) {
+                move('down')
+            } else {
+                move('up')
+            }
+        }
+    }
 }
 
 function restartGame() {
@@ -243,7 +251,7 @@ function restartGame() {
     updateBoard()
 }
 
-document.addEventListener('keydown', handleKeyDown, handleSwipe())
+document.addEventListener('keydown', handleKeyDown)
 
 
 createBoard()
