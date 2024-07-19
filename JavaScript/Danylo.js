@@ -218,17 +218,17 @@ function handleSwipe() {
         if (deltaX > 0) {
             move('right')
             
-        } else {
+        } 
+        else {
             move('left')
             
         }
-    } else {
-        if (deltaY > 0) {
-            move('down')
-            
-        } else {
-            move('up')
-        }
+    } 
+    else if (deltaY > 0) {
+        move('down')
+    } 
+    else {
+        move('up')
     }
     event.preventDefault()
     handleKeyDown(event)
@@ -243,7 +243,8 @@ function restartGame() {
     updateBoard()
 }
 
-document.addEventListener('keydown', handleKeyDown, handleSwipe)
+document.addEventListener('keydown', handleKeyDown, handleSwipe())
+
 
 createBoard()
 restartGame()
