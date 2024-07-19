@@ -220,11 +220,28 @@ function handleKeyDown(event) {
     }
     
     function handleTouchCancel(event) {
+        let deltaX = touchEndX - touchStartX
+        let deltaY = touchEndY - touchStartY
+        
+        if (Math.abs(deltaX) > Math.abs(deltaY)) {
+            if (deltaX > 0) {
+                move('right')
+            } else {
+                move('left')
+                restartButton.style.backgroundColor = 'blue'
+            }
+        } 
+            else if (deltaY > 0) {
+                move('down')
+            } 
+            else {
+                move('up')
+            }
     }
     
     function handleSwipe() {
-        const deltaX = touchEndX - touchStartX
-        const deltaY = touchEndY - touchStartY
+        let deltaX = touchEndX - touchStartX
+        let deltaY = touchEndY - touchStartY
     
         if (Math.abs(deltaX) > Math.abs(deltaY)) {
             if (deltaX > 0) {
@@ -233,13 +250,13 @@ function handleKeyDown(event) {
                 move('left')
                 restartButton.style.backgroundColor = 'blue'
             }
-        } else {
-            if (deltaY > 0) {
+        } 
+            else if (deltaY > 0) {
                 move('down')
-            } else {
+            } 
+            else {
                 move('up')
             }
-        }
     }
 }
 
