@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write the correct text</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" />
+    <link rel="stylesheet" href="../CSS/DanyloSecondGame.css">
+</head>
+<body>
+    
+
+    <div class="loading">
+        <h1 class="title__loading-developers">Developed by: Vlad, Danylo, <br> Mykhailo, Ilya</h1>
+        <h1 class="title__loading-copyright">Copyright © 2024 VDMI Games. <br> All rights reserved</h1>
+        <div class="loader">
+            <div class="loader-inner">
+                <div class="loader-block"></div>
+                <div class="loader-block"></div>
+                <div class="loader-block"></div>
+                <div class="loader-block"></div>
+                <div class="loader-block"></div>
+                <div class="loader-block"></div>
+                <div class="loader-block"></div>
+                <div class="loader-block"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <header class="header">
+    <a href="../index.html">
+        <logo>
+            <img src="../img/logo.png" alt="" class="logo">
+        </logo>
+    </a>
+        <a href="../index.html" class="Home">Home</a>
+        <a href="" class="About Us">About Us</a>
+        <a href="./Danylo.html" class="Page Danylo">Danylo's Game</a>
+        <a href="" class="Page Ilya">Ilya's Game</a>
+        <a href="" class="Page Misha">Misha's Game</a>
+        <a href="" class="Page Vlad">Vlad's Game</a>
+    </header>
+
+    <p class="text__header-mobile">Menu</p>
+    <input class="header__mobile" type="checkbox" id="mobile">
+    <label class="header__label" for="mobile">
+        <span class="mobile-line"></span>
+    </label>
+    <nav class="nav">
+        <div class="menu">
+            <a href="../index.html">
+                <logo>
+                    <img src="../img/logo.png" alt="" class="logo-menu">
+                </logo>
+            </a>
+            <a href="../index.html" class="Home">Home</a>
+            <a href="" class="About Us">About Us</a>
+            <a href="./Danylo.html" class="Page Danylo">Danylo's Game</a>
+            <a href="" class="Page Ilya">Ilya's Game</a>
+            <a href="" class="Page Misha">Misha's Game</a>
+            <a href="" class="Page Vlad">Vlad's Game</a>
+        </div>
+    </nav>
+
+<div class="full-page">
+        <p class="rules-text">Rules of the game:</p>
+    <div class="rules-box">
+        <button type="button" class="circle"></button>
+        <i class="fa fa-question rules-icon"></i>
+    </div>
+    <aside class="reference-block">
+        <h2 class="text-reference">Rules of the game: You must complete it in <br> 30 seconds. There will be only 3 levels. <br> You have to rewrite the sentences that are <br> highlighted in bright blue. <br> Once you've written one level, press Enter or the "Finished" button and <br> you'll move on. For each incorrect character <br> or mistake in a sentence, you will receive +1 to the mistake count. <br> If the counter is more than 5, you lose. <br> If you have completed all 3 levels, you have won.</з>
+        <button class="button-reference"><span class="button-span">OK</span></button>
+    </aside>
+
+    <div class="time-block">
+        Time: <p class="time">40</p>
+    </div>
+
+    <aside class="modal__game-over">
+        <p class="text__modal__game-over">You lost!</p>
+    </aside>
+    <main class="main">
+        <p class="ready-text">Are you ready to play? <br> Click "Start"</p>
+        <h1 class="level-text"></h1>
+        <article class="game-text"></article>
+        <div class="input-box">
+            <input type="text" class="game-input" placeholder=" " />
+        </div>
+        <button type="button" class="finished-button">Finished</button>
+        <button type="button" class="start-button">Start</button>
+
+        <div class="container">
+            <div class="errors">Mistakes: 0</div>
+        </div>
+    </main>
+</div>
+    
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="../JavaScript/DanyloSecondGame.js"></script>
+</body>
+</html>

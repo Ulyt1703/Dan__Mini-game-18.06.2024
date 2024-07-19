@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" />
+    <link rel="stylesheet" href="../CSS/Danylo.css">
+</head>
+<body>
+    
+
+    <div class="loading">
+        <h1 class="title__loading-developers">Developed by: Vlad, Danylo, <br> Mykhailo, Ilya</h1>
+        <h1 class="title__loading-copyright">Copyright © 2024 VDMI Games. <br> All rights reserved</h1>
+        <div class="loader">
+            <div class="loader-inner">
+                <div class="loader-block"></div>
+                <div class="loader-block"></div>
+                <div class="loader-block"></div>
+                <div class="loader-block"></div>
+                <div class="loader-block"></div>
+                <div class="loader-block"></div>
+                <div class="loader-block"></div>
+                <div class="loader-block"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <header class="header">
+    <a href="../index.html">
+        <logo>
+            <img src="../img/logo.png" alt="" class="logo">
+        </logo>
+    </a>
+        <a href="../index.html" class="Home">Home</a>
+        <a href="" class="About Us">About Us</a>
+        <a href="./Danylo.html" class="Page Danylo">Danylo's Game</a>
+        <a href="" class="Page Ilya">Ilya's Game</a>
+        <a href="" class="Page Misha">Misha's Game</a>
+        <a href="" class="Page Vlad">Vlad's Game</a>
+    </header>
+
+    <p class="text__header-mobile">Menu</p>
+    <input class="header__mobile" type="checkbox" id="mobile">
+    <label class="header__label" for="mobile">
+        <span class="mobile-line"></span>
+    </label>
+    <nav class="nav">
+        <div class="menu">
+            <a href="../index.html">
+                <logo>
+                    <img src="../img/logo.png" alt="" class="logo-menu">
+                </logo>
+            </a>
+            <a href="../index.html" class="Home">Home</a>
+            <a href="" class="About Us">About Us</a>
+            <a href="./Danylo.html" class="Page Danylo">Danylo's Game</a>
+            <a href="" class="Page Ilya">Ilya's Game</a>
+            <a href="" class="Page Misha">Misha's Game</a>
+            <a href="" class="Page Vlad">Vlad's Game</a>
+        </div>
+    </nav>
+
+    <main class="main">
+        <div class="container">
+            <div class="heading">
+                <h1 class="title">2048</h1>
+                <button class="restart-button" onclick="restartGame()">New Game</button>
+                <p class="score">Score: <span id="score">0</span></p>
+            </div>
+        <div class="grid-container" id="grid-container">
+            <div class="grid-cell" id="cell-0"></div>
+            <div class="grid-cell" id="cell-1"></div>
+            <div class="grid-cell" id="cell-2"></div>
+            <div class="grid-cell" id="cell-3"></div>
+            <div class="grid-cell" id="cell-4"></div>
+            <div class="grid-cell" id="cell-5"></div>
+            <div class="grid-cell" id="cell-6"></div>
+            <div class="grid-cell" id="cell-7"></div>
+            <div class="grid-cell" id="cell-8"></div>
+            <div class="grid-cell" id="cell-9"></div>
+            <div class="grid-cell" id="cell-10"></div>
+            <div class="grid-cell" id="cell-11"></div>
+            <div class="grid-cell" id="cell-12"></div>
+            <div class="grid-cell" id="cell-13"></div>
+            <div class="grid-cell" id="cell-14"></div>
+            <div class="grid-cell" id="cell-15"></div>
+        </div>
+        </div>
+    </main>
+
+<div class="Container__second-game">    
+    <h1 class="title__about__second-game">The next game is <br> "Memory". <br> Test yourself <br> in a new game.</h1>
+    <a class="link__Second__game-block" href="../HTML/DanyloSecondGame.html">
+        <div class="Second__game-block">
+            <img src="../img/Nature-4.jpg" alt="" class="Second__game-img">
+            <h2 class="Second__game-title">Memory</h2>
+        </div>
+    </a>
+</div>
+
+    <footer class="footer">
+        <p class="description-footer">Questions? Need help? You can contact our <br> support team at: <br> 
+        +380508765434 or by e-mail: <br> VDMIGames@gmail.com</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="../JavaScript/Danylo.js"></script>
+</body>
+</html>
