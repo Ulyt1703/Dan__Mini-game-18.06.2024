@@ -86,10 +86,12 @@ function getInfo(information){
                     <h2 class="title-main-1">${title1}</h2>
                 </div>
             </a>
-            <div class="box-main-2">
-                <img src="${url2}" alt="" class="img-main-2">
-                <h2 class="title-main-2">${title2}</h2>
-            </div>
+            <a href=".HTML/DanyloSecondGame.html">
+                <div class="box-main-2">
+                    <img src="${url2}" alt="" class="img-main-2">
+                    <h2 class="title-main-2">${title2}</h2>
+                </div>
+            </a>
             <div class="box-main-3">
                 <img src="${url3}" alt="" class="img-main-3">
                 <h2 class="title-main-3">${title3}</h2>
