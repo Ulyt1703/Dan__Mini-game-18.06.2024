@@ -3,7 +3,6 @@ let textHeaderMobile = document.querySelector(".text__header-mobile")
 let headerLabel = document.querySelector(".header__label")
 let mainHome = document.querySelector(".main")
 let containerSecondGame = document.querySelector(".Container__second-game")
-let restartButton = document.querySelector(".restart-button")
 let footerHome = document.querySelector(".footer")
 let loading = document.querySelector(".loading")
 window.addEventListener("load", function() {
@@ -194,71 +193,64 @@ function handleKeyDown(event) {
             move('down')
             break 
     }
-
-    document.addEventListener('touchstart', handleTouchStart, false)
-    document.addEventListener('touchmove', handleTouchMove, false)
-    document.addEventListener('touchend', handleTouchEnd, false)
-    document.addEventListener('touchcancel', handleTouchCancel, false)
-    
-    let touchStartX = 0
-    let touchStartY = 0
-    let touchEndX = 0
-    let touchEndY = 0
-    
-    function handleTouchStart(event) {
-        touchStartX = event.changedTouches[0].screenX
-        touchStartY = event.changedTouches[0].screenY
-    }
-    
-    function handleTouchMove(event) {
-        touchEndX = event.changedTouches[0].screenX
-        touchEndY = event.changedTouches[0].screenY
-    }
-    
-    function handleTouchEnd(event) {
-        handleSwipe()
-    }
-    
-    function handleTouchCancel(event) {
-        let deltaX = touchEndX - touchStartX
-        let deltaY = touchEndY - touchStartY
-        
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
-            if (deltaX > 0) {
-                move('right')
-            } else {
-                move('left')
-                restartButton.style.backgroundColor = 'blue'
-            }
-        } 
-            else if (deltaY > 0) {
-                move('down')
-            } 
-            else {
-                move('up')
-            }
-    }
-    
-    function handleSwipe() {
-        let deltaX = touchEndX - touchStartX
-        let deltaY = touchEndY - touchStartY
-    
-        if (Math.abs(deltaX) > Math.abs(deltaY)) {
-            if (deltaX > 0) {
-                move('right')
-            } else {
-                move('left')
-                restartButton.style.backgroundColor = 'blue'
-            }
-        } 
-            else if (deltaY > 0) {
-                move('down')
-            } 
-            else {
-                move('up')
-            }
-    }
 }
+
+
+        let touchStartX = 0
+        let touchStartY = 0
+
+        container.addEventListener('touchstart', function (e) {
+            touchStartX = e.touches[0].clientX
+            touchStartY = e.touches[0].clientY
+        })
+
+        container.addEventListener('touchend', function (e) {
+            let touchEndX = e.changedTouches[0].clientX
+            let touchEndY = e.changedTouches[0].clientY
+            handleGesture(touchStartX, touchStartY, touchEndX, touchEndY)
+        })
+
+        function handleGesture(startX, startY, endX, endY) {
+            let diffX = endX - startX
+            let diffY = endY - startY
+            
+            if (Math.abs(diffX) > Math.abs(diffY)) {
+                // Horizontal movement
+                if (diffX > 0) {
+                    moveRight()
+                } else {
+                    moveLeft()
+                }
+            } else {
+                // Vertical movement
+                if (diffY > 0) {
+                    moveDown()
+                } else {
+                    moveUp()
+                }
+            }
+        }
+
+        function moveLeft() {
+            move('left')
+            // Logic for moving grid items to the left
+        }
+
+        function moveRight() {
+            move('right')
+            // Logic for moving grid items to the right
+        }
+
+        function moveUp() {
+            move('up')
+            // Logic for moving grid items up
+        }
+
+        function moveDown() {
+            move('down')
+            // Logic for moving grid items down
+        }
+
 
 function restartGame() {
     score = 0
@@ -270,10 +262,8 @@ function restartGame() {
 
 document.addEventListener('keydown', handleKeyDown)
 
-
 createBoard()
 restartGame()
-
 
 
 document.addEventListener('keydown', function(event) {
