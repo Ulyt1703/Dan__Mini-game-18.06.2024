@@ -80,12 +80,10 @@ let main = document.querySelector(".main")
 function getInfo(information){
     information.forEach(info => {
         main.innerHTML = `
-            <a href="HTML/Danylo.html">
                 <div class="box-main-1">
                     <img src="${url1}" alt="" class="img-main-1">
                     <h2 class="title-main-1">${title1}</h2>
                 </div>
-            </a>
             <div class="box-main-2">
                 <img src="${url2}" alt="" class="img-main-2">
                 <h2 class="title-main-2">${title2}</h2>
