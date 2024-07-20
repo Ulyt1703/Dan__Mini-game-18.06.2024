@@ -202,12 +202,16 @@ function handleKeyDown(event) {
         container.addEventListener('touchstart', function (e) {
             touchStartX = e.touches[0].clientX
             touchStartY = e.touches[0].clientY
+            e.preventDefault()
+            handleKeyDown(e)
         })
 
         container.addEventListener('touchend', function (e) {
             let touchEndX = e.changedTouches[0].clientX
             let touchEndY = e.changedTouches[0].clientY
             handleGesture(touchStartX, touchStartY, touchEndX, touchEndY)
+            e.preventDefault()
+            handleKeyDown(e)
         })
 
         function handleGesture(startX, startY, endX, endY) {
@@ -233,29 +237,21 @@ function handleKeyDown(event) {
 
         function moveLeft() {
             move('left')
-            event.preventDefault()
-            handleKeyDown(event)
             // Logic for moving grid items to the left
         }
 
         function moveRight() {
             move('right')
-            event.preventDefault()
-            handleKeyDown(event)
             // Logic for moving grid items to the right
         }
 
         function moveUp() {
             move('up')
-            event.preventDefault()
-            handleKeyDown(event)
             // Logic for moving grid items up
         }
 
         function moveDown() {
             move('down')
-            event.preventDefault()
-            handleKeyDown(event)
             // Logic for moving grid items down
         }
 
