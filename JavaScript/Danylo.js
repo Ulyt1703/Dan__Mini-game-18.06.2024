@@ -233,21 +233,29 @@ function handleKeyDown(event) {
 
         function moveLeft() {
             move('left')
+            event.preventDefault()
+            handleKeyDown(event)
             // Logic for moving grid items to the left
         }
 
         function moveRight() {
             move('right')
+            event.preventDefault()
+            handleKeyDown(event)
             // Logic for moving grid items to the right
         }
 
         function moveUp() {
             move('up')
+            event.preventDefault()
+            handleKeyDown(event)
             // Logic for moving grid items up
         }
 
         function moveDown() {
             move('down')
+            event.preventDefault()
+            handleKeyDown(event)
             // Logic for moving grid items down
         }
 
